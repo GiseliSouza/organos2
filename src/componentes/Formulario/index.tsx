@@ -16,6 +16,7 @@ const [nome, setNome] = useState('')
 const [cargo, setCargo] = useState('')
 const [imagem, setImagem] = useState('')
 const [time, setTime] = useState('')
+const [data, setData] = useState('')
 
 
 const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
@@ -24,7 +25,8 @@ const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
         nome,
         cargo,
         imagem,
-        time
+        time,
+        data
     })
     setNome('')
     setCargo('')
@@ -56,6 +58,14 @@ const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
                 valor={imagem}
                 aoAlterado={valor => setImagem(valor)}
                 />
+                <CampoTexto 
+                    label='Data de entrada no time'
+                    placeholder=''
+                    valor={data}
+                    aoAlterado={valor => setData(valor)}
+                    tipo="date"
+                />
+
                 <ListaSuspensa 
                     obrigatorio={true} 
                     label="Time" 
